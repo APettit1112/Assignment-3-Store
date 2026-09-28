@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProductCard.css';
 
 const ProductCard = ({ id, name, price, image, description, onAddToCart }) => {
@@ -8,12 +9,21 @@ const ProductCard = ({ id, name, price, image, description, onAddToCart }) => {
       <h3>{name}</h3>
       <p className="price">${price.toFixed(2)}</p>
       <p>{description}</p>
-      <button
-        type="button"
-        onClick={() => onAddToCart({ id, name, price, image, description })}
-      >
-        Add to Cart
-      </button>
+
+      <div className="product-card-actions">
+        {/* link to the selected product details page */}
+        <Link to={`/products/${id}`} className="product-link-button">
+          View Details
+        </Link>
+
+        {/* add this product to the shopping cart */}
+        <button
+          type="button"
+          onClick={() => onAddToCart({ id, name, price, image, description })}
+        >
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
 };

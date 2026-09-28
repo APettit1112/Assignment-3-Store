@@ -45,3 +45,25 @@ to observe the styles.*/
   margin: 10px 0;
   line-height: 1.5;
 }
+
+.product-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.product-link-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background: #0f766e;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.product-link-button:hover {
+  background: #115e59;
+}
