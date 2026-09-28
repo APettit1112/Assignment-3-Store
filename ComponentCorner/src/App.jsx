@@ -123,14 +123,17 @@ function App() {
 export default App
 */ 
 
+// App.jsx (Will contain routing setup & cart state management)
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.css';
-import ProductCard from './assets/components/ProductCard';
 import Header from './assets/components/Header';
-import Hero from './assets/components/Hero';
 import Footer from './assets/components/Footer';
-import CartItem from './assets/components/CartItem';
+import HomePage from './pages/HomePage';
+import ProductsPage from './pages/ProductsPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
+import CartPage from './pages/CartPage';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -181,7 +184,6 @@ function App() {
   ];
 
   const addToCart = (product) => {
-    console.log('Added to cart:', product);
     setCart((currentCart) => [...currentCart, product]);
   };
 
@@ -189,56 +191,32 @@ function App() {
     setCart((currentCart) => currentCart.filter((item) => item.id !== productId));
   };
 
-  const cartTotal = cart.reduce((sum, item) => sum + item.price, 0);
-
   return (
-    <div className="app">
-      <Header cartCount={cart.length} />
-      <Hero
-        title="ComponentCorner"
-        subtitle="Discover your next tech upgrade."
-        ctaText="Shop Deals"
-        image="https://placehold.co/1200x400/0f766e/ffffff?text=Smart+Tech+Deals"
-      />
+    <BrowserRouter>
+      <div className="app">
+        <Header cartCount={cart.length} />
 
-      <div className="product-list">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            price={product.price}
-            image={product.image}
-            description={product.description}
-            onAddToCart={addToCart}
-          />
-        ))}
+        <main className="page-shell">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/products"
+              element={<ProductsPage products={products} addToCart={addToCart} />}
+            />
+            <Route
+              path="/products/:productId"
+              element={<ProductDetailsPage products={products} addToCart={addToCart} />}
+            />
+            <Route
+              path="/cart"
+              element={<CartPage products={cart} removeFromCart={removeFromCart} />}
+            />
+          </Routes>
+        </main>
+
+        <Footer />
       </div>
-
-      <section className="cart-section">
-        <h2>Your Cart</h2>
-        {cart.length === 0 ? (
-          <p className="empty-cart">Your cart is empty.</p>
-        ) : (
-          <>
-            <div className="cart-list">
-              {cart.map((item, index) => (
-                <CartItem
-                  key={`${item.id}-${index}`}
-                  item={item}
-                  onRemove={removeFromCart}
-                />
-              ))}
-            </div>
-            <div className="cart-total">
-              <strong>Total: ${cartTotal.toFixed(2)}</strong>
-            </div>
-          </>
-        )}
-      </section>
-
-      <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 

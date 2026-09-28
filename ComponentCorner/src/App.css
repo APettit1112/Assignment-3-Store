@@ -1,7 +1,62 @@
+
+/* AI helped with the sizing to ensure it all works together */
+
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.page-shell {
+  flex: 1;
+}
+
+.page-content {
+  padding: 24px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #0f7616;
+  font-weight: 700;
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+}
+
+.home-intro {
+  padding: 32px 24px 8px;
+}
+
+.intro-copy {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: #d7e6f5;
+  border: 1px solid #262e39;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .product-list {
@@ -12,7 +67,7 @@
 }
 
 .cart-section {
-  padding: 0 24px 32px;
+  padding: 24px;
 }
 
 .cart-section h2 {
@@ -29,6 +84,11 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.cart-total {
+  margin-top: 18px;
+  font-size: 1.1rem;
 }
 
 .counter {
