@@ -127,7 +127,7 @@ export default App
 //  and each Route maps a URL path to a page component. The app keeps cart state here so HomePage,
 //  ProductsPage, ProductDetailsPage, and CartPage can all access the same product/cart data while 
 // the Header and Footer stay visible across all pages.
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.css';
@@ -139,7 +139,16 @@ import ProductDetailsPage from './pages/ProductDetailsPage';
 import CartPage from './pages/CartPage';
 
 function App() {
-  const [cart, setCart] = useState([]);
+  // localStorage: load saved cart on refresh and save 
+  // the current cart whenever it changes
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem('componentCornerCart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('componentCornerCart', JSON.stringify(cart));
+  }, [cart]);
 
   const products = [
     {
