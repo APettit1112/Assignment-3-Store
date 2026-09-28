@@ -123,7 +123,10 @@ function App() {
 export default App
 */ 
 
-// App.jsx (Will contain routing setup & cart state management)
+// Router Configuration: BrowserRouter wraps the app, Routes defines the page navigation,
+//  and each Route maps a URL path to a page component. The app keeps cart state here so HomePage,
+//  ProductsPage, ProductDetailsPage, and CartPage can all access the same product/cart data while 
+// the Header and Footer stay visible across all pages.
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
