@@ -3,9 +3,9 @@
 
 /* Footer styling*/
 .footer {
-    background-color: #3d3b46;
-    color: #f9f6f6;
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: #eef2ff;
     padding: 20px;
     text-align: center;
-    border-top: 2px solid #7aacd5;
+    border-top: 2px solid #a5b4fc;
     }

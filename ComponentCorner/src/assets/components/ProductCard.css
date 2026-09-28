@@ -5,12 +5,13 @@ to observe the styles.*/
 
 /* ProductCard styling*/
 .product-card {
-  border: 1px solid #7aacd5;
+  border: 1px solid #c7d2fe;
   border-radius: 8px;
   padding: 16px;
   margin: 16px;
   width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #f8f7ff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
 }
 
 /* ProductCard image styling*/
@@ -33,7 +34,7 @@ to observe the styles.*/
 .product-card .price {
   font-size: 18px;
   font-weight: bold;
-  color: #c22615;
+  color: #4338ca;
   margin: 5px 0;
 }
 
@@ -57,7 +58,7 @@ to observe the styles.*/
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  background: #0f766e;
+  background: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
   color: #fff;
   padding: 10px 12px;
   border-radius: 6px;
@@ -65,5 +66,5 @@ to observe the styles.*/
 }
 
 .product-link-button:hover {
-  background: #115e59;
+  background: linear-gradient(135deg, #4338ca 0%, #1d4ed8 100%);
 }

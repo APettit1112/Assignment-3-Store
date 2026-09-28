@@ -6,8 +6,8 @@ borders, and typography. Import this stylesheet into Header.jsx to observe the s
 .header {
   padding: 20px;
   margin: 10px;
-  background-color: #2c1794;
-  border-bottom: 2px solid #7aacd5;
+  background: linear-gradient(135deg, #2d1b69 0%, #4338ca 100%);
+  border-bottom: 2px solid #a5b4fc;
 }
 
 .header-row {
@@ -21,7 +21,7 @@ borders, and typography. Import this stylesheet into Header.jsx to observe the s
 
 .header h1 {
   font-size: 36px;
-  color: #b7fb4a;
+  color: #f5f3ff;
   margin: 0;
   text-align: center;
 }
@@ -52,14 +52,14 @@ borders, and typography. Import this stylesheet into Header.jsx to observe the s
   height: 22px;
   padding: 0 6px;
   border-radius: 50%;
-  background: #ffb703;
-  color: #1b1b1b;
+  background: #8b5cf6;
+  color: #ffffff;
   font-size: 0.8rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
 }
 
 /* Header Nav. Style*/
@@ -71,7 +71,7 @@ borders, and typography. Import this stylesheet into Header.jsx to observe the s
 .header nav a {
   margin-right: 20px;
   text-decoration: none;
-  color: #f9f6f6;
+  color: #e0e7ff;
   font-weight: bold;
 }
 

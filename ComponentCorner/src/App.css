@@ -1,5 +1,6 @@
 
 /* AI helped with the sizing to ensure it all works together */
+/* AI was used for mass color change */
 
 .app {
   display: flex;
@@ -22,7 +23,7 @@
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #0f7616;
+  color: #4f46e5;
   font-weight: 700;
   font-size: 0.75rem;
   margin-bottom: 8px;
@@ -47,11 +48,11 @@
 }
 
 .feature-card {
-  background: #d7e6f5;
-  border: 1px solid #262e39;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.08);
 }
 
 .feature-card h3 {
